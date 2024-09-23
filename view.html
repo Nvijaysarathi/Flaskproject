@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registered Users</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f8ff; /* Light background color */
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 80%;
+            max-width: 600px;
+            max-height: 400px; /* Set a maximum height for the list */
+            overflow-y: auto; /* Enable vertical scrolling */
+            background-color: #fff; /* White background for the list */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        li {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        li:last-child {
+            border-bottom: none; /* Remove border for the last item */
+        }
+
+        hr {
+            margin: 10px 0; /* Space out horizontal rule */
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .user-details {
+            color: #555; /* Gray color for user details */
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2196F3; /* Button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1976D2; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>All Users Data</h1>
+    <ul>
+      {% for user in users %}
+        <li class="user-details">
+          <strong>Id:</strong> {{ user.id }}<br>
+          <strong>Name:</strong> {{ user.name }}<br>
+          <strong>Age:</strong> {{ user.age }}<br>
+          <strong>City:</strong> {{ user.city }}
+        </li>
+        <hr>
+      {% endfor %}
+    </ul>
+    <form action="/delete" method="GET"> <!-- New form for deleting a user -->
+        <input type="submit" value="Delete User">
+    </form>
+</body>
+</html>

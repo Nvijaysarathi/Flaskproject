@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Success</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #e6f7ff; /* Light background color */
+        }
+
+        h1 {
+            color: #4caf50; /* Success color */
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            background-color: #fff; /* White background for the table */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #4caf50; /* Header color */
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            background-color: #f9f9f9; /* Light gray for table cells */
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #2196F3; /* Button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            margin: 5px; /* Add some space between buttons */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1976D2; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+  <h1>Registration Success</h1>
+  <table>
+    <tr>
+      <th>Name :</th>
+      <th>{{name}}</th>
+    </tr>
+    <tr>
+      <th>Age :</th>
+      <th>{{age}}</th>
+    </tr>
+    <tr>
+      <th>City :</th>
+      <th>{{city}}</th>
+    </tr>
+  </table>
+  <form action="/register">
+        <input type="submit" value="Add User">
+  </form>
+  <form action="/view" method="GET"> <!-- New form for viewing all users -->
+        <input type="submit" value="View All Users">
+  </form>
+</body>
+</html>
